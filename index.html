@@ -25,11 +25,11 @@
     <script>
       const hideFullScreenButton = "false";
       const buildUrl = "Build";
-      const loaderUrl = buildUrl + "/11.loader.js";
+      const loaderUrl = buildUrl + "/12.loader.js";
       const config = {
-        dataUrl: buildUrl + "/11.data.gz",
-        frameworkUrl: buildUrl + "/11.framework.js.gz",
-        codeUrl: buildUrl + "/11.wasm.gz",
+        dataUrl: buildUrl + "/12.data",
+        frameworkUrl: buildUrl + "/12.framework.js",
+        codeUrl: buildUrl + "/12.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Colonthree Enterprises AS",
         productName: "Sloyd",
@@ -88,25 +88,5 @@
       };
       document.body.appendChild(script);
     </script>
-    <!-- Message form for sending stuff to Unity -->
-  <div class="message-form centered">
-    <h2>Message for Unity</h2>
-    <input type="text" name="txtMessage" id="txtMessage" placeholder="Enter message..." />
-    <button onclick="sendMessageToUnity()">Send</button>
-  </div>
-      <script>
-      // Function which sends the message to Unity
-      function sendMessageToUnity() {
-         // Get the input field
-         const txtMessage = document.getElementById("txtMessage");
-         // Get the message
-         const message = txtMessage.value;
-         // Clear the input field
-         txtMessage.value = "";
-         // Send message to the Unity scene
-         // Params: "Target object in the scene", "Function name", "Parameters"
-         unityInstance.SendMessage("SloydAPI", "ReceiveMessageFromPage", message);
-      }
-   </script>
   </body>
 </html>
